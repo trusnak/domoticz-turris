@@ -1,0 +1,27 @@
+--- a/www/app/HardwareController.js	2015-11-06 17:42:04.676097150 +0100
++++ b/www/app/HardwareController.js	2015-11-06 17:47:40.929420221 +0100
+@@ -45,6 +45,7 @@
+ 
+             var text = $("#hardwarecontent #hardwareparamstable #combotype option:selected").text();
+             if (
++				(text.indexOf("Turris Router CPU + Board Temperature") >= 0) ||
+				(text.indexOf("Panasonic") >= 0) ||
+				(text.indexOf("TE923") >= 0) ||
+				(text.indexOf("Volcraft") >= 0) ||
+@@ -540,6 +540,7 @@
+             var text = $("#hardwarecontent #hardwareparamstable #combotype option:selected").text();
+ 
+             if (
++	    			(text.indexOf("Turris Router CPU + Board Temperature") >= 0)||
+ 				(text.indexOf("Panasonic") >= 0) ||
+				(text.indexOf("TE923") >= 0) ||
+				(text.indexOf("Volcraft") >= 0) ||
+@@ -2947,7 +2947,7 @@
+                     {
+                         SerialName="WWW";
+                     }
+-                    else if ((item.Type == 15)||(item.Type == 23)||(item.Type == 26)||(item.Type == 27)||(item.Type == 51)||(item.Type == 54))
++                    else if ((item.Type == 63)||(item.Type == 15)||(item.Type == 23)||(item.Type == 26)||(item.Type == 27)||(item.Type == 51)||(item.Type == 54))
+                     {
+                         SerialName="";
+                     }

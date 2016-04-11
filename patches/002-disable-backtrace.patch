@@ -1,0 +1,33 @@
+--- a/main/domoticz.cpp	2015-11-09 14:41:40.321850725 +0100
++++ b/main/domoticz.cpp	2015-11-09 14:42:23.688516068 +0100
+@@ -44,30 +44,8 @@
+ 	#include <string.h> 
+ #endif
+ 
+-#ifdef __gnu_linux__
+-#include <execinfo.h>
+-static void dumpstack(void) {
+-	// Notes :
+-	// The following code does needs -rdynamic compile option.not print full backtrace.
+-	// To have a full backtrace you need to :
+-	// - compile with -g -rdynamic options
+-	// - active core dump using "ulimit -c unlimited" before starting daemon
+-	// - use gdb to analyze the core dump
+-	void *addrs[128];
+-	int n, count = backtrace(addrs, 128);
+-	char** symbols = backtrace_symbols(addrs, count);
+-
+-	if (symbols) {
+-		for (n = 0; n < count; n++) {
+-			_log.Log(LOG_ERROR, "  %s", symbols[n]);
+-		}
+-		free(symbols);
+-	}
+-}
+-#else
+ static void dumpstack(void) {
+ }
+-#endif
+ 
+ const char *szHelp=
+ 	"Usage: Domoticz -www port -verbose x\n"

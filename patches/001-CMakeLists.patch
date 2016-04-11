@@ -1,0 +1,33 @@
+--- a/CMakeLists.txt	2015-11-06 17:52:53.866077338 +0100
++++ b/CMakeLists.txt	2015-11-06 17:57:11.766069467 +0100
+@@ -168,6 +168,8 @@
+ hardware/1Wire/1WireByKernel.cpp
+ hardware/1Wire/1WireCommon.cpp
+ hardware/1Wire/1WireForWindows.cpp
++hardware/TurrisThermo.cpp
++hardware/JabloDongle.cpp
+ hardware/AnnaThermostat.cpp
+ hardware/ASyncSerial.cpp
+ hardware/ASyncTCP.cpp
+@@ -442,6 +442,21 @@
+   message(STATUS "Not building on Raspberry Pi. GPIO support disabled.")
+ ENDIF(RaspberryPi)
+ 
++FIND_LIBRARY(SENSORS_LIBRARY NAMES libsensors sensors)
++IF(SENSORS_LIBRARY)
++  MESSAGE(STATUS "libsensors library found at: ${SENSORS_LIBRARY}")
++  target_link_libraries(domoticz ${SENSORS_LIBRARY})
++ELSE(SENSORS_LIBRARY)
++  MESSAGE(FATAL_ERROR "libsensors not found on your system")
++ENDIF(SENSORS_LIBRARY)
++
++FIND_PATH(SENSORS_INCLUDE_DIRS NAMES sensors/sensors.h)
++IF(SENSORS_INCLUDE_DIRS)
++  MESSAGE(STATUS "libsensors includes found at: ${SENSORS_INCLUDE_DIRS}")
++ELSE(SENSORS_INCLUDE_DIRS)
++  MESSAGE(FATAL_ERROR "libsensors includes not found on your system")
++ENDIF(SENSORS_INCLUDE_DIRS)
++
+ find_path(TELLDUSCORE_INCLUDE NAMES telldus-core.h)
+ if (TELLDUSCORE_INCLUDE)
+   message(STATUS "Found telldus-core (telldus-core.h), adding tellstick support")

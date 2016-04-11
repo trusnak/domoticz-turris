@@ -1,0 +1,28 @@
+--- a/main/WebServer.cpp	2015-11-06 11:02:06.580162841 +0100
++++ b/main/WebServer.cpp	2015-11-03 13:26:48.407807983 +0100
+@@ -993,6 +993,12 @@
+ 			else if (htype == HTYPE_RaspberryGPIO) {
+ 				//all fine here!
+ 			}
++			else if (htype == HTYPE_JabloDongle) {
++				//all fine here!
++			}
++			else if (htype == HTYPE_TurrisThermo) {
++				//all fine here!
++			}
+ 			else
+ 				return;
+ 
+@@ -1166,6 +1172,12 @@
+ 				if (username == "")
+ 					return;
+ 			}
++			else if (htype == HTYPE_JabloDongle) {
++					//all fine here too
++			}
++			else if (htype == HTYPE_TurrisThermo) {
++				//all fine here too
++			}
+ 			else
+ 				return;
+ 

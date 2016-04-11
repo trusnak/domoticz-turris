@@ -1,0 +1,11 @@
+--- a/www/css/style.css	2015-11-06 11:02:06.686829504 +0100
++++ b/www/css/style.css	2015-11-03 13:26:48.561141312 +0100
+@@ -1782,7 +1782,7 @@
+ .brand
+ {
+ 	height: 20px;
+-	width: 100px;
++	width: 400px;
+ }            
+ .brand h1 {
+ 	float: left;

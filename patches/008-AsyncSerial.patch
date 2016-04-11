@@ -1,0 +1,37 @@
+--- a/hardware/ASyncSerial.cpp	2015-11-06 11:02:06.556829508 +0100
++++ b/hardware/ASyncSerial.cpp	2015-11-03 13:26:48.364474651 +0100
+@@ -34,6 +34,11 @@
+ #include <iostream>
+ #include <boost/bind.hpp>
+ 
++#ifndef WIN32
++#include <sys/ioctl.h>
++#include <sys/file.h>
++#endif
++
+ //
+ //Class AsyncSerial
+ //
+@@ -100,6 +105,11 @@
+ 
+     setErrorStatus(true);//If an exception is thrown, error_ remains true
+     pimpl->port.open(devname);
++#ifndef WIN32
++    boost::asio::serial_port::native_handle_type sfd = pimpl->port.native_handle();
++    ioctl(sfd, TIOCEXCL);
++    flock(sfd, LOCK_EX);
++#endif
+     pimpl->port.set_option(boost::asio::serial_port_base::baud_rate(baud_rate));
+     pimpl->port.set_option(opt_parity);
+     pimpl->port.set_option(opt_csize);
+@@ -164,6 +174,10 @@
+     pimpl->io.post(boost::bind(&AsyncSerial::doClose, this));
+     pimpl->backgroundThread.join();
+     pimpl->io.reset();
++#ifndef WIN32
++    boost::asio::serial_port::native_handle_type sfd = pimpl->port.native_handle();
++    flock(sfd, LOCK_UN);
++#endif
+     if(errorStatus())
+     {
+         throw(boost::system::system_error(boost::system::error_code(),

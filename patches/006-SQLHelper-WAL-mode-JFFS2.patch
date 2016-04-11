@@ -1,0 +1,15 @@
+--- a/main/SQLHelper.cpp	2015-11-06 11:02:06.576829507 +0100
++++ b/main/SQLHelper.cpp	2015-11-03 13:26:48.404474650 +0100
+@@ -649,7 +649,11 @@
+ #ifndef WIN32
+ 	//test, this could improve performance
+ 	sqlite3_exec(m_dbase, "PRAGMA synchronous = NORMAL", NULL, NULL, NULL);
+-	sqlite3_exec(m_dbase, "PRAGMA journal_mode = WAL", NULL, NULL, NULL);
++	//rc=sqlite3_exec(m_dbase, "PRAGMA journal_mode = WAL", NULL, NULL, NULL);
++	//Database in WAL mode is not working on JFFS2 file system, because it does not support MMAP_SHARED!
++	//This caused disk I/O errors in libsql3 when attempting to write to DB.
++	//Changed to MEMORY, which should keep journal in RAM
++	sqlite3_exec(m_dbase, "PRAGMA journal_mode = MEMORY", NULL, NULL, NULL);
+ #else
+ 	sqlite3_exec(m_dbase, "PRAGMA journal_mode=DELETE", NULL, NULL, NULL);
+ #endif
