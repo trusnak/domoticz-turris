@@ -1,20 +1,20 @@
 --- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
 +++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -154,6 +154,8 @@
-	HTYPE_AtagOne,				//72
-	HTYPE_Sterbox,				//73
-	HTYPE_HTTPPOLLER,					//74
+@@ -157,6 +157,8 @@
+	HTYPE_FITBIT,				//75
+	HTYPE_RAVEn,	    		//76
+	HTYPE_S0SmartMeterTCP,		//77
 +	HTYPE_JabloDongle,			//250
 +	HTYPE_TurrisThermo,			//251
- 
  	HTYPE_END
  };
+
 --- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
 +++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
 @@ -221,6 +221,8 @@
-		{ HTYPE_AtagOne, "Atag One Thermostat" },
-		{ HTYPE_Sterbox, "Sterbox v2-3 PLC with LAN interface" },
-		{ HTYPE_HTTPPOLLER, "HTTP/HTTPS poller" },
+		{ HTYPE_FITBIT, "Fitbit" },
+		{ HTYPE_RAVEn, "Rainforest RAVEn USB" },
+		{ HTYPE_S0SmartMeterTCP, "S0 Meter with LAN interface" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
 		{ 0, NULL, NULL }

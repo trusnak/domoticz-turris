@@ -1,8 +1,8 @@
 --- a/hardware/ASyncSerial.cpp	2015-11-06 11:02:06.556829508 +0100
 +++ b/hardware/ASyncSerial.cpp	2015-11-03 13:26:48.364474651 +0100
 @@ -34,6 +34,11 @@
- #include <iostream>
- #include <boost/bind.hpp>
+ 
+ #define BUFFER_SIZE 2048
  
 +#ifndef WIN32
 +#include <sys/ioctl.h>
@@ -12,7 +12,7 @@
  //
  //Class AsyncSerial
  //
-@@ -100,6 +105,11 @@
+@@ -121,6 +126,11 @@
  
      setErrorStatus(true);//If an exception is thrown, error_ remains true
      pimpl->port.open(devname);

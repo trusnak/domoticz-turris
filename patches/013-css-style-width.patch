@@ -6,6 +6,6 @@
  	height: 20px;
 -	width: 100px;
 +	width: 400px;
- }            
+ }
  .brand h1 {
  	float: left;

@@ -1,6 +1,6 @@
 --- a/main/mainworker.cpp	2015-11-06 11:02:06.583496174 +0100
 +++ b/main/mainworker.cpp	2015-11-03 13:26:48.411141316 +0100
-@@ -72,6 +72,8 @@
+@@ -74,6 +74,8 @@
  #include "../hardware/Pinger.h"
  #include "../hardware/Nest.h"
  #include "../hardware/Thermosmart.h"
@@ -8,10 +8,10 @@
 +#include "../hardware/TurrisThermo.h"
  #include "../hardware/Kodi.h"
  #include "../hardware/Netatmo"
- #include "../hardware/AnnaThermostat.h"
-@@ -739,6 +741,12 @@
+ #include "../hardware/HttpPoller.h"
+@@ -854,6 +860,12 @@
+		//LAN
  		pHardware = new CurrentCostMeterTCP(ID, Address, Port);
- #endif
  		break;
 +	case HTYPE_JabloDongle:
 +		pHardware = new CJabloDongle(ID, SerialPort, 57600);
@@ -19,6 +19,6 @@
 +	case HTYPE_TurrisThermo:
 +		pHardware = new CTurrisThermo(ID);
 +		break;
- 	}
- 
- 	if (pHardware)
+ 	case HTYPE_DomoticzInternal:
+ 		pHardware = new DomoticzInternal(ID);
+ 		break;
