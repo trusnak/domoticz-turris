@@ -1,18 +1,18 @@
 --- a/CMakeLists.txt	2015-11-06 17:52:53.866077338 +0100
 +++ b/CMakeLists.txt	2015-11-06 17:57:11.766069467 +0100
-@@ -168,6 +168,8 @@
+@@ -235,6 +235,8 @@
  hardware/1Wire/1WireByKernel.cpp
  hardware/1Wire/1WireCommon.cpp
  hardware/1Wire/1WireForWindows.cpp
 +hardware/TurrisThermo.cpp
 +hardware/JabloDongle.cpp
+ hardware/AccuWeather.cpp
  hardware/AnnaThermostat.cpp
  hardware/ASyncSerial.cpp
- hardware/ASyncTCP.cpp
-@@ -442,6 +442,21 @@
-   message(STATUS "Not building on Raspberry Pi. GPIO support disabled.")
- ENDIF(RaspberryPi)
- 
+@@ -584,6 +584,21 @@
+   message(STATUS "==== (Please follow http://wiringpi.com/download-and-install/ if you want to use GPIO.)")
+ ENDIF(WiringPi)
+
 +FIND_LIBRARY(SENSORS_LIBRARY NAMES libsensors sensors)
 +IF(SENSORS_LIBRARY)
 +  MESSAGE(STATUS "libsensors library found at: ${SENSORS_LIBRARY}")

@@ -1,9 +1,9 @@
 --- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
 +++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -157,6 +157,8 @@
-	HTYPE_FITBIT,				//75
-	HTYPE_RAVEn,	    		//76
-	HTYPE_S0SmartMeterTCP,		//77
+@@ -168,6 +168,8 @@
+	HTYPE_Daikin,				//86
+	HTYPE_HEOS,					//87
+	HTYPE_MultiFun,				//88
 +	HTYPE_JabloDongle,			//250
 +	HTYPE_TurrisThermo,			//251
  	HTYPE_END
@@ -11,12 +11,12 @@
 
 --- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
 +++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
-@@ -221,6 +221,8 @@
-		{ HTYPE_FITBIT, "Fitbit" },
-		{ HTYPE_RAVEn, "Rainforest RAVEn USB" },
-		{ HTYPE_S0SmartMeterTCP, "S0 Meter with LAN interface" },
+@@ -236,6 +236,8 @@
+		{ HTYPE_Daikin, "Daikin Airconditioning with LAN (HTTP) interface" },
+		{ HTYPE_HEOS, "HEOS by DENON" },
+		{ HTYPE_MultiFun, "MultiFun LAN" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
+		
 		{ 0, NULL, NULL }
 	};
-	return findTableIDSingle1 (Table, hType);
