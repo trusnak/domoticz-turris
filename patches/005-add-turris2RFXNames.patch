@@ -1,9 +1,9 @@
 --- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
 +++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -168,6 +168,8 @@
-	HTYPE_Daikin,				//86
-	HTYPE_HEOS,					//87
-	HTYPE_MultiFun,				//88
+@@ -173,6 +173,8 @@
+	HTYPE_ZIBLUETCP,			//90
+	HTYPE_Yeelight,				//91
+	HTYPE_MySensorsMQTT,		//92
 +	HTYPE_JabloDongle,			//250
 +	HTYPE_TurrisThermo,			//251
  	HTYPE_END
@@ -11,12 +11,12 @@
 
 --- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
 +++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
-@@ -236,6 +236,8 @@
-		{ HTYPE_Daikin, "Daikin Airconditioning with LAN (HTTP) interface" },
-		{ HTYPE_HEOS, "HEOS by DENON" },
-		{ HTYPE_MultiFun, "MultiFun LAN" },
+@@ -238,6 +238,8 @@
+		{ HTYPE_ZIBLUEUSB, "ZiBlue RFPlayer USB" },
+		{ HTYPE_ZIBLUETCP, "ZiBlue RFPlayer with LAN interface" },
+		{ HTYPE_Yeelight, "YeeLight LED" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
-		
+
 		{ 0, NULL, NULL }
 	};
