@@ -1,9 +1,9 @@
 --- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
 +++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -173,6 +173,8 @@
-	HTYPE_ZIBLUETCP,			//90
-	HTYPE_Yeelight,				//91
-	HTYPE_MySensorsMQTT,		//92
+@@ -180,6 +180,8 @@
+	HTYPE_Arilux,				//97
+	HTYPE_OpenWebNetUSB,		//98
+	HTYPE_IntergasInComfortLAN2RF,			//99
 +	HTYPE_JabloDongle,			//250
 +	HTYPE_TurrisThermo,			//251
  	HTYPE_END
@@ -11,12 +11,12 @@
 
 --- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
 +++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
-@@ -238,6 +238,8 @@
-		{ HTYPE_ZIBLUEUSB, "ZiBlue RFPlayer USB" },
-		{ HTYPE_ZIBLUETCP, "ZiBlue RFPlayer with LAN interface" },
-		{ HTYPE_Yeelight, "YeeLight LED" },
+@@ -247,6 +247,8 @@
+		{ HTYPE_Arilux, "Arilux AL-LC0x" },
+		{ HTYPE_OpenWebNetUSB, "MyHome OpenWebNet USB" },
+		{ HTYPE_IntergasInComfortLAN2RF, "Intergas InComfort LAN2RF Gateway" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
-
 		{ 0, NULL, NULL }
 	};
+	return findTableIDSingle1 (Table, hType);

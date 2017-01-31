@@ -1,0 +1,10 @@
+--- a/CMakeLists.txt	2017-01-24 17:04:07.604041225 +0100
++++ b/CMakeLists.txt	2017-01-24 17:04:21.624040792 +0100
+@@ -6,6 +6,7 @@
+ ## required min. libBoost version
+ SET(DOMO_MIN_LIBBOOST_VERSION 105500)
+ ##
++SET(Python_ADDITIONAL_VERSIONS 3.5)
+ 
+ option(USE_BUILTIN_LUA "Use builtin lua library" YES)
+ IF(USE_BUILTIN_LUA)

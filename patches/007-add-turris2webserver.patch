@@ -1,24 +1,24 @@
 --- a/main/WebServer.cpp	2015-11-06 11:02:06.580162841 +0100
 +++ b/main/WebServer.cpp	2015-11-03 13:26:48.407807983 +0100
-@@ -1133,6 +1139,12 @@
- 			else if (htype == HTYPE_RaspberryGPIO) {
- 				//all fine here!
- 			}
+@@ -1211,6 +1217,12 @@
+			else if (htype == HTYPE_RaspberryGPIO) {
+				//all fine here!
+			}
 +			else if (htype == HTYPE_JabloDongle) {
 +				//all fine here!
 +			}
 +			else if (htype == HTYPE_TurrisThermo) {
 +				//all fine here!
 +			}
- 			else if (htype == HTYPE_OpenWebNet) {
- 				//All fine here
- 			}
-@@ -1360,6 +1366,12 @@
- 			else if (htype == HTYPE_RaspberryGPIO) {
+			else if (htype == HTYPE_OpenWebNetTCP) {
+				//All fine here
+			}
+@@ -1515,6 +1521,12 @@
+ 			else if (htype == HTYPE_Daikin {
  				//all fine here!
  			}
 +			else if (htype == HTYPE_JabloDongle) {
-+					//all fine here too
++				//all fine here too
 +			}
 +			else if (htype == HTYPE_TurrisThermo) {
 +				//all fine here too
