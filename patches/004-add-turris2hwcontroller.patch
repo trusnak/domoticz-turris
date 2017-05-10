@@ -1,27 +1,27 @@
 --- a/www/app/HardwareController.js	2015-11-06 17:42:04.676097150 +0100
 +++ b/www/app/HardwareController.js	2015-11-06 17:47:40.929420221 +0100
-@@ -69,6 +69,7 @@
-   			});
-             }
-             else if (
+@@ -109,6 +109,7 @@
+				});
+			}
+			else if (
 +				(text.indexOf("Turris Router CPU + Board Temperature") >= 0) ||
 				(text.indexOf("Panasonic") >= 0) ||
+				(text.indexOf("BleBox") >= 0) ||
 				(text.indexOf("TE923") >= 0) ||
-				(text.indexOf("Volcraft") >= 0) ||
-@@ -753,6 +753,7 @@
-                });
-             }
-             else if (
+@@ -999,6 +999,7 @@
+				});
+			}
+			else if (
 +	    			(text.indexOf("Turris Router CPU + Board Temperature") >= 0)||
  				(text.indexOf("Panasonic") >= 0) ||
+				(text.indexOf("BleBox") >= 0) ||
 				(text.indexOf("TE923") >= 0) ||
-				(text.indexOf("Volcraft") >= 0) ||
-@@ -3872,7 +3872,7 @@
-                     {
-                         SerialName="WWW";
-                     }
--                    else if ((item.Type == 15)||(item.Type == 23)||(item.Type == 26)||(item.Type == 27)||(item.Type == 51)||(item.Type == 54))
-+                    else if ((item.Type == 251)||(item.Type == 15)||(item.Type == 23)||(item.Type == 26)||(item.Type == 27)||(item.Type == 51)||(item.Type == 54))
-                     {
-                         SerialName="";
-                     }
+@@ -4595,7 +4597,7 @@
+ 							else if ((item.Type == 14) || (item.Type == 25) || (item.Type == 28) || (item.Type == 30) || (item.Type == 34)) {
+ 								SerialName = "WWW";
+ 							}
+-							else if ((item.Type == 15) || (item.Type == 23) || (item.Type == 26) || (item.Type == 27) || (item.Type == 51) || (item.Type == 54)) {
++							else if ((item.Type == 251) || ((item.Type == 15) || (item.Type == 23) || (item.Type == 26) || (item.Type == 27) || (item.Type == 51) || (item.Type == 54)) {
+ 								SerialName = "";
+ 							}
+ 							else if ((item.Type == 16) || (item.Type == 32)) {

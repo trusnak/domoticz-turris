@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -318,6 +318,7 @@ IF(LIBUSB_FOUND)
+@@ -561,6 +561,7 @@ IF(LIBUSB_FOUND)
    MESSAGE(STATUS "LIBUSB found at: ${LIBUSB_LIBRARIES}")
    add_definitions(-DWITH_LIBUSB)
    target_link_libraries(domoticz ${LIBUSB_LIBRARIES})

@@ -1,22 +1,22 @@
 --- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
 +++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -180,6 +180,8 @@
-	HTYPE_Arilux,				//97
-	HTYPE_OpenWebNetUSB,		//98
-	HTYPE_IntergasInComfortLAN2RF,			//99
-+	HTYPE_JabloDongle,			//250
-+	HTYPE_TurrisThermo,			//251
+@@ -184,6 +184,8 @@
+ 	HTYPE_RelayNet,				//100
+ 	HTYPE_KMTronicUDP,			//101
+ 	HTYPE_SysfsGPIO,			//102
++	HTYPE_JabloDongle,                      //250
++	HTYPE_TurrisThermo,                     //251
  	HTYPE_END
  };
 
 --- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
 +++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
-@@ -247,6 +247,8 @@
-		{ HTYPE_Arilux, "Arilux AL-LC0x" },
-		{ HTYPE_OpenWebNetUSB, "MyHome OpenWebNet USB" },
-		{ HTYPE_IntergasInComfortLAN2RF, "Intergas InComfort LAN2RF Gateway" },
+@@ -249,6 +249,8 @@
+ 		{ HTYPE_RelayNet, "Relay-Net 8 channel LAN Relay and binary Input module" },
+ 		{ HTYPE_KMTronicUDP, "KMTronic Gateway with LAN/UDP interface" },
+ 		{ HTYPE_SysfsGPIO, "Generic sysfs gpio" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
-		{ 0, NULL, NULL }
-	};
-	return findTableIDSingle1 (Table, hType);
+ 		{ 0, NULL, NULL }
+ 	};
+ 	return findTableIDSingle1 (Table, hType);
