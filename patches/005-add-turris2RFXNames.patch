@@ -1,20 +1,20 @@
---- a/main/RFXNames.h	2015-11-06 17:13:06.689483522 +0100
-+++ b/main/RFXNames.h	2015-11-06 17:13:25.059482961 +0100
-@@ -184,6 +184,8 @@
- 	HTYPE_RelayNet,				//100
+--- a/main/RFXNames.h	2017-05-24 13:19:10.577630715 +0200
++++ b/main/RFXNames.h	2017-05-24 13:21:58.190958870 +0200
+@@ -185,6 +185,8 @@
  	HTYPE_KMTronicUDP,			//101
- 	HTYPE_SysfsGPIO,			//102
+ 	HTYPE_SysfsGpio,			//102
+	HTYPE_Rtl433,                           //103
 +	HTYPE_JabloDongle,                      //250
 +	HTYPE_TurrisThermo,                     //251
  	HTYPE_END
  };
 
---- a/main/RFXNames.cpp	2015-11-06 11:02:06.573496174 +0100
-+++ b/main/RFXNames.cpp	2015-11-03 13:26:48.404474650 +0100
-@@ -249,6 +249,8 @@
- 		{ HTYPE_RelayNet, "Relay-Net 8 channel LAN Relay and binary Input module" },
+--- a/main/RFXNames.cpp	2017-05-24 13:19:10.577630715 +0200
++++ b/main/RFXNames.cpp	2017-05-24 13:25:36.800952117 +0200
+@@ -251,6 +251,8 @@
  		{ HTYPE_KMTronicUDP, "KMTronic Gateway with LAN/UDP interface" },
- 		{ HTYPE_SysfsGPIO, "Generic sysfs gpio" },
+ 		{ HTYPE_SysfsGpio, "Generic sysfs GPIO" },
+		{ HTYPE_Rtl433, "Rtl433 RTL-SDR receiver" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
  		{ 0, NULL, NULL }
