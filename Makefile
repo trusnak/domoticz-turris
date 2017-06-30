@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=domoticz
 PKG_VERSION:=3.5878
-PKG_RELEASE:=5
+PKG_RELEASE:=6
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=License.txt
 PKG_MAINTAINER:=Tomas Rusnak <trusnak@redhat.com>
@@ -59,9 +59,11 @@ define Package/domoticz/install
 	#$(CP) $(PKG_INSTALL_DIR)/usr/domoticz/svnversion.h $(1)/usr/share/domoticz/
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/domoticz $(1)/usr/share/domoticz/
 	$(CP) $(PKG_INSTALL_DIR)/usr/www $(1)/usr/share/domoticz/
+	$(INSTALL_DIR) $(1)/usr/share/domoticz/Config
+	$(CP) $(PKG_INSTALL_DIR)/usr/Config $(1)/usr/share/domoticz/
 
-	$(INSTALL_DIR) $(1)/usr/share/domoticz/scripts/lua/
-	$(CP) $(PKG_INSTALL_DIR)/usr/scripts/lua/ $(1)/usr/share/domoticz/lua/
+	$(INSTALL_DIR) $(1)/usr/share/domoticz/scripts
+	$(CP) $(PKG_INSTALL_DIR)/usr/scripts $(1)/usr/share/domoticz/
 
 	$(INSTALL_DIR) $(1)/usr/bin/
 	ln -sf ../share/domoticz/domoticz $(1)/usr/bin/domoticz
