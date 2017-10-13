@@ -1,9 +1,9 @@
 --- a/main/RFXNames.h	2017-05-24 13:19:10.577630715 +0200
 +++ b/main/RFXNames.h	2017-05-24 13:21:58.190958870 +0200
-@@ -185,6 +185,8 @@
- 	HTYPE_KMTronicUDP,			//101
+@@ -186,6 +186,8 @@
  	HTYPE_SysfsGpio,			//102
 	HTYPE_Rtl433,                           //103
+	HTYPE_OnkyoAVTCP,			//104
 +	HTYPE_JabloDongle,                      //250
 +	HTYPE_TurrisThermo,                     //251
  	HTYPE_END
@@ -11,10 +11,10 @@
 
 --- a/main/RFXNames.cpp	2017-05-24 13:19:10.577630715 +0200
 +++ b/main/RFXNames.cpp	2017-05-24 13:25:36.800952117 +0200
-@@ -251,6 +251,8 @@
- 		{ HTYPE_KMTronicUDP, "KMTronic Gateway with LAN/UDP interface" },
+@@ -252,6 +252,8 @@
  		{ HTYPE_SysfsGpio, "Generic sysfs GPIO" },
 		{ HTYPE_Rtl433, "Rtl433 RTL-SDR receiver" },
+		{ HTYPE_OnkyoAVTCP, "Onkyo AV Receiver (LAN)" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
  		{ 0, NULL, NULL }
