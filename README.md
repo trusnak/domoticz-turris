@@ -1,12 +1,17 @@
 # About domoticz-turris
-OpenWRT Makefile for domoticz + turris dongle patchset
+OpenWRT Makefile for domoticz + turris dongle patchset + openzwave support
 
 This is unofficial repository for openwrt build files for OpenWRT used in Turris/Omnia routers.
 You can find prebuild binaries in Releases. 
 
 # Installation
-It's linked with openzwave support and udev, 
-so you need to install libudev libraries from this repository, too.
+ opkg install domoticz_xxx.ipk
 
-# TODO:
-- bug in HardwareController.js in lates releases -> Hardware tab cannot be accessed
+# Compilation
+ - add repository to feeds.conf.default
+ - add name of the repository to lists/base.lua.m4
+ - ./scripts/feeds update -a
+ - ./scripts/feeds install -a
+ - make menuconfig (enable domoticz)
+ - make -j4 package/domoticz/{clean,compile,install} V=s
+ - enjoy from ./bin/<your arch>/package/<repo name>/domoticz_xxx.ipk
