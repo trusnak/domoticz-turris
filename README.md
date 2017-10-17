@@ -13,5 +13,5 @@ You can find prebuild binaries in Releases.
  - ./scripts/feeds update -a
  - ./scripts/feeds install -a
  - make menuconfig (enable domoticz)
- - make -j4 package/domoticz/{clean,compile,install} V=s
- - enjoy from ./bin/<your arch>/package/<repo name>/domoticz_xxx.ipk
+ - make package/domoticz/{clean,compile,install} V=s
+ - enjoy from ./bin/your arch/package/repo name/domoticz_xxx.ipk
