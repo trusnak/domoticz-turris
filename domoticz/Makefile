@@ -42,8 +42,8 @@ define Package/domoticz/description
 endef
 
 CMAKE_OPTIONS += \
-	-DCMAKE_BUILD_TYPE=Release . \
-	-DCPACK_STRIP_FILES=1
+        -DCMAKE_BUILD_TYPE=Release . \
+        -DCPACK_STRIP_FILES=1
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
@@ -75,4 +75,4 @@ define Package/domoticz/install
 	$(INSTALL_CONF) ./files/domoticz.conf $(1)/etc/config/domoticz
 endef
 
-$(eval $(call BuildPackage,domoticz,+liblmsensors,+libudev))
+$(eval $(call BuildPackage,domoticz))
