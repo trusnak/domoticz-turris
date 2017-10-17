@@ -1,0 +1,13 @@
+--- a/cpp/hidapi/hidapi/hidapi.h	2014-10-13 12:41:13.000000000 +0200
++++ b/cpp/hidapi/hidapi/hidapi.h	2014-04-29 07:40:56.000000000 +0200
+@@ -27,6 +27,10 @@
+ #ifndef HIDAPI_H__
+ #define HIDAPI_H__
+ 
++#ifndef __USE_GNU
++#define __USE_GNU
++#endif
++
+ #include <wchar.h>
+ 
+ #ifdef _WIN32

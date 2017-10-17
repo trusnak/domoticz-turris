@@ -12,7 +12,7 @@ PKG_VERSION:=3.8153
 PKG_RELEASE:=1
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=License.txt
-PKG_MAINTAINER:=Tomas Rusnak <trusnak@redhat.com>
+PKG_MAINTAINER:=Tomas Rusnak <linkermail@gmail.com>
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/domoticz/domoticz.git
@@ -31,7 +31,7 @@ define Package/domoticz
   CATEGORY:=Utilities
   SUBMENU:=Home Automation
   TITLE:=Domoticz Home Automation
-  DEPENDS:=+zlib +libusb-1.0 +libusb-compat +libcurl +libsqlite3 +libopenssl +boost-system +boost-thread +boost-date_time +lm-sensors +eudev +libidn
+  DEPENDS:=+zlib +libusb-1.0 +libusb-compat +libcurl +libsqlite3 +libopenssl +boost-system +boost-thread +boost-date_time +libidn +lmsensors +open-zwave
   URL:=https://domoticz.com/
 endef
 
@@ -75,4 +75,4 @@ define Package/domoticz/install
 	$(INSTALL_CONF) ./files/domoticz.conf $(1)/etc/config/domoticz
 endef
 
-$(eval $(call BuildPackage,domoticz))
+$(eval $(call BuildPackage,domoticz,+liblmsensors,+libeudev))

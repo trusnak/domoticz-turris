@@ -1,0 +1,48 @@
+--- a/cpp/examples/MinOZW/Makefile	2014-04-29 07:40:57.000000000 +0200
++++ b/cpp/examples/MinOZW/Makefile	2014-10-09 20:52:27.000000000 +0200
+@@ -9,6 +9,11 @@
+ .SUFFIXES:	.d .cpp .o .a
+ .PHONY:	default clean
+ 
++CC     := $(CROSS_COMPILE)gcc
++CXX    := $(CROSS_COMPILE)g++
++LD     := $(CROSS_COMPILE)g++
++AR     := $(CROSS_COMPILE)ar rc
++RANLIB := $(CROSS_COMPILE)ranlib
+ 
+ DEBUG_CFLAGS    := -Wall -Wno-format -ggdb -DDEBUG
+ RELEASE_CFLAGS  := -Wall -Wno-unknown-pragmas -Wno-format -O3
+--- a/cpp/tinyxml/Makefile	2014-04-29 07:40:54.000000000 +0200
++++ b/cpp/tinyxml/Makefile	2014-10-09 20:56:57.000000000 +0200
+@@ -19,11 +19,11 @@ TINYXML_USE_STL := YES
+ 
+ #****************************************************************************
+ 
+-CC     := gcc
+-CXX    := g++
+-LD     := g++
+-AR     := ar rc
+-RANLIB := ranlib
++CC     := $(CROSS_COMPILE)gcc
++CXX    := $(CROSS_COMPILE)g++
++LD     := $(CROSS_COMPILE)g++
++AR     := $(CROSS_COMPILE)ar rc
++RANLIB := $(CROSS_COMPILE)ranlib
+ 
+ DEBUG_CFLAGS     := -Wall -Wno-format -g -DDEBUG
+ RELEASE_CFLAGS   := -Wall -Wno-unknown-pragmas -Wno-format -O3
+--- a/cpp/build/Makefile	2014-04-29 07:40:54.000000000 +0200
++++ b/cpp/build/Makefile	2014-10-12 13:46:32.000000000 +0200
+@@ -7,7 +7,11 @@
+ # Linux requires libudev-dev
+ # FreeBSD requires port misc/e2fsprogs-libuuid
+ 
+-
++CC     := $(CROSS_COMPILE)gcc
++CXX    := $(CROSS_COMPILE)g++
++LD     := $(CROSS_COMPILE)g++
++AR     := $(CROSS_COMPILE)ar rc
++RANLIB := $(CROSS_COMPILE)ranlib
+ 
+ #these variables can be modified by the user if needed
+ 

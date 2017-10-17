@@ -1,0 +1,11 @@
+--- a/cpp/build/Makefile	2015-11-06 10:19:51.120240217 +0100
++++ b/cpp/build/Makefile	2015-11-06 10:22:18.000000000 +0100
+@@ -48,7 +52,7 @@
+ 
+ else
+ LDFLAGS += -shared -Wl,-soname,libopenzwave.so.$(VERSION)
+-LIBS 	+= -ludev
++LIBS 	+= -ludev -L$(PKG_BUILD_DIR)/../udev-173/libudev/.libs -L$(STAGING_DIR)/lib
+ endif
+ 
+ #where to put the temporary library

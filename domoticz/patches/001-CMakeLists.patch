@@ -31,3 +31,17 @@
  find_path(TELLDUSCORE_INCLUDE NAMES telldus-core.h)
  if (TELLDUSCORE_INCLUDE)
    message(STATUS "Found telldus-core (telldus-core.h), adding tellstick support")
+@@ -717,9 +717,9 @@
+   option(USE_STATIC_LIBSTDCXX "Build with static libgcc/libstdc++ libraries" YES)
+   IF(USE_STATIC_LIBSTDCXX)
+     message(STATUS "Using static libgcc/libstdc++")
+-    SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_C_FLAGS} -static-libgcc -static-libstdc++")
+-    SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS} -static-libgcc -static-libstdc++")
+-    SET(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -static-libgcc -static-libstdc++")
++    SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_C_FLAGS} -static-libgcc -static-libstdc++ -lstdc++")
++    SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS} -static-libgcc -static-libstdc++ -lstdc++")
++    SET(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -static-libgcc -static-libstdc++ -lstdc++")
+   ELSE(USE_STATIC_LIBSTDCXX)
+     message(STATUS "Using dynamic libgcc_s/libstdc++")
+   ENDIF(USE_STATIC_LIBSTDCXX)
+
