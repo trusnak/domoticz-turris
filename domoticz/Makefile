@@ -31,7 +31,7 @@ define Package/domoticz
   CATEGORY:=Utilities
   SUBMENU:=Home Automation
   TITLE:=Domoticz Home Automation
-  DEPENDS:=+zlib +libusb-1.0 +libusb-compat +libcurl +libsqlite3 +libopenssl +boost-system +boost-thread +boost-date_time +libidn +lm-sensors
+  DEPENDS:=+zlib +libusb-1.0 +libusb-compat +libcurl +libsqlite3 +libopenssl +boost-system +boost-thread +boost-date_time +libidn +lm-sensors +udev
   URL:=https://domoticz.com/
 endef
 
