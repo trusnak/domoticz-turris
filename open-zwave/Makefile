@@ -4,12 +4,10 @@ PKG_NAME:=open-zwave
 PKG_VERSION:=1.5
 PKG_RELEASE:=2
 
-#PKG_SOURCE:=V$(PKG_VERSION).tar.gz
-#PKG_SOURCE_URL:=https://github.com/OpenZWave/open-zwave/archive/
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/OpenZWave/open-zwave.git
 PKG_SOURCE_VERSION:=5e9aa4d47f6fb3dc8537bba59b4251c78714d91f
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.g
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/${PKG_NAME}-$(PKG_VERSION)
 
