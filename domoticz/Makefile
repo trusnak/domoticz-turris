@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=domoticz
 PKG_VERSION:=3.8153
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=License.txt
 PKG_MAINTAINER:=Tomas Rusnak <linkermail@gmail.com>
