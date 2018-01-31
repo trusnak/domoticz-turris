@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=domoticz
 PKG_VERSION:=3.8153
-PKG_RELEASE:=2
+PKG_RELEASE:=4
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=License.txt
 PKG_MAINTAINER:=Tomas Rusnak <linkermail@gmail.com>
@@ -47,7 +47,7 @@ CMAKE_OPTIONS += \
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
-#	echo "#define SVNVERSION  $(PKG_REV)-$(PKG_RELEASE)" > $(PKG_BUILD_DIR)/svnversion.h
+	sed -i "s/#define APPVERSION 5876/#define APPVERSION $(PKG_REV)-$(PKG_RELEASE)/" $(PKG_BUILD_DIR)/appversion.default
 endef
 
 define Package/domoticz/conffiles
