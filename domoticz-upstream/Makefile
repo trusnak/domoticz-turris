@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=domoticz
+PKG_NAME:=domoticz-upstream
 PKG_VERSION:=3.8153
 PKG_RELEASE:=5
 PKG_LICENSE:=GPL-3.0
@@ -26,7 +26,7 @@ CMAKE_INSTALL:=1
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-define Package/domoticz
+define Package/domoticz-upstream
   SECTION:=utils
   CATEGORY:=Utilities
   SUBMENU:=Home Automation
@@ -35,7 +35,7 @@ define Package/domoticz
   URL:=https://domoticz.com/
 endef
 
-define Package/domoticz/description
+define Package/domoticz-upstream/description
   Domoticz is a Home Automation System that lets you monitor and configure various devices like:
   Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more.
   Notifications/Alerts can be sent to any mobile device.
@@ -50,11 +50,11 @@ define Build/Prepare
 	sed -i "s/#define APPVERSION 5876/#define APPVERSION $(PKG_REV)-$(PKG_RELEASE)/" $(PKG_BUILD_DIR)/appversion.default
 endef
 
-define Package/domoticz/conffiles
+define Package/domoticz-upstream/conffiles
 /etc/config/domoticz
 endef
 
-define Package/domoticz/install
+define Package/domoticz-upstream/install
 	$(INSTALL_DIR) $(1)/usr/share/domoticz
 	#$(CP) $(PKG_INSTALL_DIR)/usr/domoticz/svnversion.h $(1)/usr/share/domoticz/
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/domoticz $(1)/usr/share/domoticz/
@@ -75,4 +75,4 @@ define Package/domoticz/install
 	$(INSTALL_CONF) ./files/domoticz.conf $(1)/etc/config/domoticz
 endef
 
-$(eval $(call BuildPackage,domoticz))
+$(eval $(call BuildPackage,domoticz-upstream))
