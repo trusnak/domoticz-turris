@@ -1,9 +1,9 @@
 --- a/main/RFXNames.h	2017-05-24 13:19:10.577630715 +0200
 +++ b/main/RFXNames.h	2017-05-24 13:21:58.190958870 +0200
-@@ -186,6 +186,8 @@
- 	HTYPE_SysfsGpio,			//102
-	HTYPE_Rtl433,                           //103
-	HTYPE_OnkyoAVTCP,			//104
+@@ -212,6 +212,8 @@
+	HTYPE_Nest_OAuthAPI,		//112
+	HTYPE_EcoCompteur,			//113
+	HTYPE_Honeywell,			//114
 +	HTYPE_JabloDongle,                      //250
 +	HTYPE_TurrisThermo,                     //251
  	HTYPE_END
@@ -11,10 +11,10 @@
 
 --- a/main/RFXNames.cpp	2017-05-24 13:19:10.577630715 +0200
 +++ b/main/RFXNames.cpp	2017-05-24 13:25:36.800952117 +0200
-@@ -252,6 +252,8 @@
- 		{ HTYPE_SysfsGpio, "Generic sysfs GPIO" },
-		{ HTYPE_Rtl433, "Rtl433 RTL-SDR receiver" },
-		{ HTYPE_OnkyoAVTCP, "Onkyo AV Receiver (LAN)" },
+@@ -276,6 +276,8 @@
+		{ HTYPE_eHouseTCP, "eHouse UDP+TCP with LAN interface" },
+		{ HTYPE_EcoCompteur, "EcoCompteur Legrand with LAN interface" },
+		{ HTYPE_Honeywell, "Honeywell Thermostat" },
 +		{ HTYPE_JabloDongle, "Jablotron USB Turris Dongle" },
 +		{ HTYPE_TurrisThermo, "Turris Router CPU + Board Temperature" },
  		{ 0, NULL, NULL }
