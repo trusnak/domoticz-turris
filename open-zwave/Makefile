@@ -2,11 +2,11 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=open-zwave
 PKG_VERSION:=1.5
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/OpenZWave/open-zwave.git
-PKG_SOURCE_VERSION:=ac28fcbb01707daeff93509ba7788f26b7d9471e
+PKG_SOURCE_VERSION:=4374049440e0e9e97a34d5c8cb411c3dc2c3f874
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_BUILD_DIR:=$(BUILD_DIR)/${PKG_NAME}-$(PKG_VERSION)
@@ -16,7 +16,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/open-zwave
 	SECTION:=libs
 	CATEGORY:=Libraries
-	DEPENDS:=+udev +libstdcpp
+	DEPENDS:=udev +libstdcpp
 	TITLE:=Open Z Wave Stack library
 endef
 
